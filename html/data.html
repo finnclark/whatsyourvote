@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<title>What's Your Vote?</title>
+  	<link rel="stylesheet" href="../css/bootstrap.css">
+  	<link rel="stylesheet" href="../css/main.css">
+  	<script src="../js/Chart.js-master/Chart.js"></script>
+  	<script src="../js/main.js"></script>
+</head>
+<body>
+	<H1>What's Your Vote?</H1>
+	<div>
+		<div>
+			<h3>Gender</h3>
+			<select name="gender">
+				<option value="both">Both</option>
+				<option value="male">Male</option>
+				<option value="female">Female</option>
+			</select>
+		</div>
+		<div>
+			<h3>Age Group</h3>
+			<select name="age">
+				<option value="all">All</option>
+				<option value="age">Age</option>
+				<option value="18">18-25</option>
+				<option value="26">26-30</option>
+				<option value="36">36-50</option>
+				<option value="50">50+</option>
+			</select>
+		</div>
+	</div>
+	<div>
+		<canvas id="partyPie" width="500" height="500"></canvas>
+	</div>
+	<script>
+
+		var pieData = [
+			{
+				value: 1,
+				color:"#FDE401",
+				highlight: "#FF5A5E",
+				label: "ACT"
+			},
+			{
+				value: 1,
+				color: "#00AEEF",
+				highlight: "#5AD3D1",
+				label: "Conservative"
+			},
+			{
+				value: 1,
+				color: "#9ACD32",
+				highlight: "#FFC870",
+				label: "Green"
+			},
+			{
+				value: 1,
+				color: "#662C92",
+				highlight: "#A8B3C5",
+				label: "Internet"
+			},
+			{
+				value: 1,
+				color: "#FF0000",
+				highlight: "#616774",
+				label: "Labour"
+			},
+			{
+				value: 1,
+				color: "#770808",
+				highlight: "#616774",
+				label: "Mana"
+			},
+			{
+				value: 1,
+				color: "#EF4A42",
+				highlight: "#616774",
+				label: "Maori"
+			},
+			{
+				value: 1,
+				color: "#00529F",
+				highlight: "#616774",
+				label: "National"
+			},
+			{
+				value: 1,
+				color: "#000000",
+				highlight: "#616774",
+				label: "NZ First"
+			},
+			{
+				value: 1,
+				color: "#501557",
+				highlight: "#616774",
+				label: "United Future"
+			}
+
+		];
+
+		var pieOptions = {
+			segmentShowStroke : false,
+			animateScale : true
+		}
+
+		window.onload = function(){
+			var ctx = document.getElementById("partyPie").getContext("2d");
+			window.myPie = new Chart(ctx).Pie(pieData, pieOptions);
+		};
+
+		var pieOptions = {
+			segmentShowStroke: true,
+			animateScale: true,
+			responsive: false,
+			maintainAspectRatio: true
+		}
+
+	</script>

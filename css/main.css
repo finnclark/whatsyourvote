@@ -8,7 +8,7 @@ body{
 	text-align: center;
 	color: #171814;
 	background-color: white;
-	font-family: "Museo-Slab", univers, helvetica, sans-serif;
+	font-family: "Museo Slab", univers, helvetica, sans-serif;
 	font-size: 45px;
 	font-weight: 700;
 }
@@ -21,7 +21,7 @@ body{
 	color: #333333;
 	font-size: 17px;
 	border-radius: 5px;
-	font-family: "Museo-Slab", univers, helvetica, sans-serif;
+	font-family: "Museo Slab", univers, helvetica, sans-serif;
 	font-weight: 100;
 }
 
@@ -38,12 +38,12 @@ body{
 	padding: 0 0 20px 0;
 	color: #333333;
 	font-size: 17px;
-	font-family: "Museo-Slab", univers, helvetica, sans-serif;
+	font-family: "Museo Slab", univers, helvetica, sans-serif;
 	font-weight: 100;
 }
 
 h3{
-	font-family: "Museo-Slab", univers, helvetica, sans-serif;
+	font-family: "Museo Slab", univers, helvetica, sans-serif;
 	font-weight: 500;
 	font-size: 20px;
 	text-align: left;
@@ -52,7 +52,7 @@ h3{
 
 option{
 	text-align: center;
-	font-family: "Museo-Slab", univers, helvetica, sans-serif;
+	font-family: "Museo Slab", univers, helvetica, sans-serif;
 	font-weight: 100;
 }
 
@@ -72,7 +72,7 @@ option{
 
 .btn-default{
 	padding: 15px 30px;
-	font-family: "Museo-Slab", univers, helvetica, sans-serif;
+	font-family: "Museo Slab", univers, helvetica, sans-serif;
 	font-weight: 500;
 	font-size: 16px;
 	border: 2px solid #818181;

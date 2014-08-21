@@ -1,5 +1,6 @@
 body{
 	background-color: white;
+	font-family: "Museo Slab", univers, helvetica, sans-serif;
 }
 
 .title h1{
@@ -13,7 +14,7 @@ body{
 	font-weight: 700;
 }
 
-.para{
+p, .para{
 	max-width: 510px;
 	padding: 20px 0 15px 0;
 	margin: 0 auto 0px auto;

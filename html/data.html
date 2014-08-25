@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-uk">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,116 +12,141 @@
   	<script src="../js/main.js"></script>
 
 </head>
-<body>
-	<div class="title">
-		<H1>What's Your Vote?</H1>
-	</div>
-	<div>
-		<div class="container">
-			<div class="row">
-				<h3 class="filter-title">Gender</h3>
-				<select name="gender">
-					<option value="both">Both</option>
-					<option value="male">Male</option>
-					<option value="female">Female</option>
-				</select>
-			
-				<h3 class="filter-title">Age Group</h3>
-				<select name="age">
-					<option value="all">All</option>
-					<option value="age">Age</option>
-					<option value="18">18-25</option>
-					<option value="26">26-30</option>
-					<option value="36">36-50</option>
-					<option value="50">50+</option>
-				</select>
+
+	<body>
+
+		<div class="title">
+			<H1>What's Your Vote?</H1>
+		</div>
+		<div class="content-box">
+			<div class="section-one">
+				<div class="filter filter-one">
+					<h3 class="filter-title">Gender</h3>
+					<select name="gender" class="styled-select">
+						<option value="all" selected>Both</option>
+						<option value="male">Male</option>
+						<option value="female">Female</option>
+					</select>
+				</div>
+
+				<div class="filter filter-two">
+					<h3 class="filter-title">Age Group</h3>
+					<select name="age" class="styled-select">
+						<option value="all" selected>All</option>
+						<option value="18">18-25</option>
+						<option value="26">26-30</option>
+						<option value="36">36-50</option>
+						<option value="50">50+</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="section-two">
+				<div class="pie-box">
+					<canvas class="pie" id="partyPie" width="360" height="360"></canvas>
+				</div>
+				<div class="list-box">
+					<ul class="list">
+						<li><div class="dot act"></div>ACT</li>
+						<li><div class="dot conservative"></div>Conservative</li>
+						<li><div class="dot green"></div>Green</li>
+						<li><div class="dot internet"></div>Internet</li>
+						<li><div class="dot labour"></div>Labour</li>
+						<li><div class="dot mana"></div>Mana</li>
+						<li><div class="dot maori"></div>Maori</li>
+						<li><div class="dot national"></div>National</li>
+						<li><div class="dot nzfirst"></div>New Zealand First</li>
+						<li><div class="dot unitedfuture"></div>United Future</li>
+					</ul>
+				</div>
 			</div>
 		</div>
-	</div>
-	<div>
-		<canvas id="partyPie" width="500" height="500"></canvas>
-	</div>
-	<script>
 
-		var pieData = [
-			{
-				value: 2,
-				color:"#FDE401",
-				highlight: "#FF5A5E",
-				label: "ACT"
-			},
-			{
-				value: 1,
-				color: "#00AEEF",
-				highlight: "#5AD3D1",
-				label: "Conservative"
-			},
-			{
-				value: 1,
-				color: "#9ACD32",
-				highlight: "#FFC870",
-				label: "Green"
-			},
-			{
-				value: 1,
-				color: "#662C92",
-				highlight: "#A8B3C5",
-				label: "Internet"
-			},
-			{
-				value: 1,
-				color: "#FF0000",
-				highlight: "#616774",
-				label: "Labour"
-			},
-			{
-				value: 1,
-				color: "#770808",
-				highlight: "#616774",
-				label: "Mana"
-			},
-			{
-				value: 1,
-				color: "#EF4A42",
-				highlight: "#616774",
-				label: "Maori"
-			},
-			{
-				value: 1,
-				color: "#00529F",
-				highlight: "#616774",
-				label: "National"
-			},
-			{
-				value: 1,
-				color: "#000000",
-				highlight: "#616774",
-				label: "NZ First"
-			},
-			{
-				value: 1,
-				color: "#501557",
-				highlight: "#616774",
-				label: "United Future"
+		<script>
+
+			var pieData = [
+				{
+					value: 2,
+					color:"#FDE401",
+					highlight: "#FF5A5E",
+					label: "ACT"
+				},
+				{
+					value: 1,
+					color: "#00AEEF",
+					highlight: "#5AD3D1",
+					label: "Conservative"
+				},
+				{
+					value: 1,
+					color: "#9ACD32",
+					highlight: "#FFC870",
+					label: "Green"
+				},
+				{
+					value: 1,
+					color: "#662C92",
+					highlight: "#A8B3C5",
+					label: "Internet"
+				},
+				{
+					value: 1,
+					color: "#FF0000",
+					highlight: "#616774",
+					label: "Labour"
+				},
+				{
+					value: 1,
+					color: "#770808",
+					highlight: "#616774",
+					label: "Mana"
+				},
+				{
+					value: 1,
+					color: "#EF4A42",
+					highlight: "#616774",
+					label: "Maori"
+				},
+				{
+					value: 1,
+					color: "#00529F",
+					highlight: "#616774",
+					label: "National"
+				},
+				{
+					value: 1,
+					color: "#000000",
+					highlight: "#616774",
+					label: "NZ First"
+				},
+				{
+					value: 1,
+					color: "#501557",
+					highlight: "#616774",
+					label: "United Future"
+				}
+
+			];
+
+			var pieOptions = {
+				segmentShowStroke : false,
+				animateScale : true
 			}
 
-		];
+			window.onload = function(){
+				var ctx = document.getElementById("partyPie").getContext("2d");
+				window.myPie = new Chart(ctx).Pie(pieData, pieOptions);
+			};
 
-		var pieOptions = {
-			segmentShowStroke : false,
-			animateScale : true
-		}
+			var pieOptions = {
+				segmentShowStroke: true,
+				animateScale: true,
+				responsive: false,
+				maintainAspectRatio: true
+			}
 
-		window.onload = function(){
-			var ctx = document.getElementById("partyPie").getContext("2d");
-			window.myPie = new Chart(ctx).Pie(pieData, pieOptions);
-		};
+		</script>
 
-		var pieOptions = {
-			segmentShowStroke: true,
-			animateScale: true,
-			responsive: false,
-			maintainAspectRatio: true
-		}
+	</body>
 
-	</script>
+</html>
